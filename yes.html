@@ -12,7 +12,7 @@
         </h1>
       </div>
       <div class="video_container">
-        <!-- Use the <video> tag for MP4 -->
+        <!-- Main Video (Cat-Flower) -->
         <video autoplay loop muted>
           <source src="./style/videos/Cat-Flower.mp4" type="video/mp4" />
           Your browser does not support the video tag.
@@ -35,5 +35,20 @@
       class="corner-image bottom-right"
       alt="Bottom right decoration"
     />
+
+    <!-- Audio element for the sound effect -->
+    <audio
+      id="confettiSound"
+      src="./style/sounds/confetti-pop-sound.mp3"
+    ></audio>
+
+    <script>
+      // JavaScript to play the sound with a delay after page load
+      window.onload = function () {
+        setTimeout(function () {
+          document.getElementById("confettiSound").play();
+        }, 1000); // 1000ms = 1 second delay
+      };
+    </script>
   </body>
 </html>
