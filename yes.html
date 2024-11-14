@@ -40,14 +40,24 @@
     <audio
       id="confettiSound"
       src="./style/sounds/confetti-pop-sound.mp3"
+      preload="auto"
     ></audio>
 
     <script>
-      // JavaScript to play the sound with a delay after page load
+      // Ensure the audio element exists and can be played
       window.onload = function () {
-        setTimeout(function () {
-          document.getElementById("confettiSound").play();
-        }, 1000); // 1000ms = 1 second delay
+        const audio = document.getElementById("confettiSound");
+
+        // Check if the audio is loaded properly
+        if (audio) {
+          setTimeout(function () {
+            audio.play().catch(function (error) {
+              console.log("Error playing sound:", error);
+            });
+          }, 200); // 1-second delay
+        } else {
+          console.log("Audio file not found or not loaded.");
+        }
       };
     </script>
   </body>
