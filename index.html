@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
   <head>
     <link rel="stylesheet" href="./style/css/styles.css" />
@@ -6,7 +6,7 @@
   <body>
     <div class="container">
       <div>
-        <h1 class="header_text">ترتيل هل تقبلين الزواج بي؟ &#128522;</h1>
+        <h1 class="header_text">إيمان هل تقبلين الزواج بي؟ &#128522;</h1>
       </div>
       <div class="gif_container">
         <img
@@ -19,20 +19,20 @@
         <button class="btn" id="yesButton" onclick="nextPage()">نعم</button>
         <script>
           function nextPage() {
-            window.location.href = "yes.html"
+            window.location.href = "yes.html";
           }
 
           function moveButton() {
             var x =
               Math.random() *
               (window.innerWidth -
-                document.getElementById("noButton").offsetWidth)
+                document.getElementById("noButton").offsetWidth);
             var y =
               Math.random() *
               (window.innerHeight -
-                document.getElementById("noButton").offsetHeight)
-            document.getElementById("noButton").style.left = `${x}px`
-            document.getElementById("noButton").style.top = `${y}px`
+                document.getElementById("noButton").offsetHeight);
+            document.getElementById("noButton").style.left = `${x}px`;
+            document.getElementById("noButton").style.top = `${y}px`;
           }
         </script>
       </div>
