@@ -63,7 +63,7 @@ body {
   
   /* Target the video inside .video_container */
   .video_container video {
-    width: 300px; /* Adjust this width to make the video smaller */
+    width: 700px; /* Adjust this width to make the video smaller */
     height: auto; /* Keeps the aspect ratio */
   }
   
