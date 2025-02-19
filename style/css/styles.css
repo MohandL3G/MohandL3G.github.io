@@ -22,7 +22,7 @@ body::before {
 }
 
 .text {
-  font-size: 200px;
+  font-size: 20vw; /* Responsive font size */
   font-weight: bold;
   color: #FFCC00; /* Light gold/yellow */
   text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
@@ -30,13 +30,14 @@ body::before {
   z-index: 2;
   display: flex;
   align-items: center; /* Center align items vertically */
+  flex-wrap: nowrap; /* Prevent wrapping */
 }
 
 .player {
   font-family: 'Tajawal', sans-serif; /* Arabic font */
-  font-size: 180px;
+  font-size: 18vw; /* Responsive font size */
   font-weight: bold;
-  margin: 0 120px;
+  margin: 0 5vw; /* Responsive margin for spacing */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dark shadow for contrast */
 }
 
@@ -56,12 +57,16 @@ body::before {
   transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
 }
 
+/* Responsive Styles */
 @media (max-width: 768px) {
   .text {
-    font-size: 150px; /* Smaller font size for smaller screens */
+    font-size: 15vw; /* Smaller font size for smaller screens */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center align items */
   }
+  
   .player {
-    font-size: 120px; /* Adjust font size for player names */
-    margin: 0 60px; /* Adjust margin for spacing */
+    font-size: 12vw; /* Adjust font size for player names */
+    margin: 10px 0; /* Adjust margin for spacing */
   }
 }
