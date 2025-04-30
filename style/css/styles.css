@@ -1,72 +1,198 @@
+/* Main styling */
+:root {
+  --primary-color: #4a6fa5;
+  --secondary-color: #166088;
+  --card-bg: rgba(22, 33, 62, 0.8);
+  --text-color: #e6e6e6;
+  --hover-color: rgba(15, 52, 96, 0.9);
+}
+
 body {
-  background: url('../images/background.jpg') no-repeat center center fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 20px;
+  /* Improved background with perfect fit */
+  background: 
+      linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url('../images/background.jpg') no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  /* Ensure content doesn't get hidden */
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  /* Add some padding for mobile */
+  padding: 0 15px;
+}
+
+/* Rest of your existing CSS... */
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+/* Dashboard grid */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* App card styling */
+.app-card {
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  background-color: var(--hover-color);
+}
+
+.app-icon {
+  width: 64px; /* Fixed width */
+  height: 64px; /* Fixed height */
+  object-fit: contain; /* Ensures images keep their aspect ratio */
+  margin-bottom: 15px;
+}
+
+.app-name {
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
+
+/* Search bar */
+.search-container {
+  margin-bottom: 30px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  position: relative;
-  font-family: 'Roboto', sans-serif; /* General font */
 }
 
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
+#search {
+  padding: 10px 15px;
+  border-radius: 20px;
+  border: none;
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
-  z-index: 1;
+  max-width: 500px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  font-size: 16px;
 }
 
-.text {
-  font-size: 20vw; /* Responsive font size */
-  font-weight: bold;
-  color: #FFCC00; /* Light gold/yellow */
-  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7); /* Darker shadow for better contrast */
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center; /* Center align items vertically */
-  flex-wrap: nowrap; /* Prevent wrapping */
-}
-
-.player {
-  font-family: 'Tajawal', sans-serif; /* Arabic font */
-  font-size: 18vw; /* Responsive font size */
-  font-weight: bold;
-  margin: 0 5vw; /* Responsive margin for spacing */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Dark shadow for contrast */
-}
-
-.pink {
-  color: #FF1493; /* Bright pink color for إيمان */
-}
-
-.orange {
-  color: #FF8C00; /* Slightly darker orange for مهند */
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@700&family=Roboto:wght@400;700&display=swap');
-
-.player:hover {
-  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8); /* Slightly enhance shadow on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-  transition: transform 0.3s ease, text-shadow 0.3s ease; /* Smooth transition */
-}
-
-/* Responsive Styles */
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .text {
-    font-size: 15vw; /* Smaller font size for smaller screens */
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center; /* Center align items */
+  .dashboard {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
   
-  .player {
-    font-size: 12vw; /* Adjust font size for player names */
-    margin: 10px 0; /* Adjust margin for spacing */
+  .app-icon {
+      width: 48px;
+      height: 48px;
   }
+}
+
+@media (max-width: 480px) {
+  .dashboard {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
+/* Add More card styling */
+.add-more-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-more-card:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.add-more-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.add-more-text {
+  font-weight: bold;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative; /* Needed for absolute positioning of pseudo-element */
+  padding: 20px 0; /* Add some vertical padding */
+}
+
+h1 {
+  color: #fff;
+  margin: 0;
+  font-size: 2.5rem; /* Larger font size */
+  position: relative; /* Needed for z-index */
+  z-index: 2; /* Ensure text appears above the circle */
+  display: inline-block; /* Contain the circle background */
+  padding: 15px 30px; /* Add padding around text */
+}
+
+/* Red circle background */
+h1::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.7); /* Red with 70% opacity */
+  border-radius: 50%; /* Makes it circular */
+  z-index: 1; /* Place behind the text */
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Optional glow effect */
+}
+
+/* Optional: Add animation for subtle pulse effect */
+@keyframes pulse {
+  0% { transform: translate(-50%, -50%) scale(1); }
+  50% { transform: translate(-50%, -50%) scale(1.05); }
+  100% { transform: translate(-50%, -50%) scale(1); }
+}
+
+h1::before {
+  animation: pulse 3s infinite ease-in-out;
 }

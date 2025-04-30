@@ -1,20 +1,116 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>نتيجة اونو مع اللعيبة إيمان</title>
-    <meta
-      name="description"
-      content="مباراة أونو بين إيمان ومهند، النتائج: 117 - 57"
-    />
+    <title>MohandL3G Dashboard</title>
     <link rel="stylesheet" href="style/css/styles.css" />
-    <link rel="icon" href="style/images/favicon.ico" type="image/x-icon" />
+    <!-- Favicon - replace href with your own favicon -->
+    <link rel="icon" href="style/images/favicon.png" type="image/x-icon" />
   </head>
   <body>
-    <div class="text">
-      <span class="player pink">إيمان</span> 216 - 137
-      <span class="player orange">مهند</span>
+    <div class="container">
+      <header>
+        <h1>MohandL3G Personal Dashboard</h1>
+      </header>
+
+      <div class="search-container">
+        <input type="text" id="search" placeholder="Search apps..." />
+      </div>
+
+      <div class="dashboard" id="dashboard">
+        <!-- APP 1 - Replace image path, name and href -->
+        <a
+          href="http://100.102.87.255:8096/"
+          class="app-card"
+          data-name="jellyfin"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="style/images/jellyfin-logo.png"
+            alt="Jellyfin"
+            class="app-icon"
+          />
+          <p class="app-name">Jellyfin</p>
+        </a>
+
+        <!-- APP 2 - Replace image path, name and href -->
+        <a
+          href="http://100.102.87.255:8080/"
+          class="app-card"
+          data-name="qBittorrent"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="style/images/qbittorrent-icon.png"
+            alt="qBittorrent"
+            class="app-icon"
+          />
+          <p class="app-name">qBittorrent</p>
+        </a>
+
+        <!-- APP 3 - Replace image path, name and href -->
+        <a
+          href="http://100.102.87.255:8384/"
+          class="app-card"
+          data-name="Syncthing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="style/images/syncthing.png"
+            alt="Syncthing"
+            class="app-icon"
+          />
+          <p class="app-name">Syncthing</p>
+        </a>
+<!-- APP 4 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 5 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 6 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 7 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 8 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 9 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+
+<!-- APP 10 - Add More placeholder -->
+<a href="#" class="add-more-card" data-name="add more">
+  <div class="add-more-icon">⋯</div>
+  <p class="add-more-text">Add More</p>
+</a>
+        </a>
+      </div>
     </div>
+
+    <script src="style/scripts/script.js"></script>
   </body>
 </html>
