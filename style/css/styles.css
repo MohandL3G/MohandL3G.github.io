@@ -157,42 +157,35 @@ h1 {
 header {
   text-align: center;
   margin-bottom: 30px;
-  position: relative; /* Needed for absolute positioning of pseudo-element */
-  padding: 20px 0; /* Add some vertical padding */
+  padding: 20px 0;
 }
 
 h1 {
-  color: #fff;
+  color: white; /* Ensures text stays white */
   margin: 0;
-  font-size: 2.5rem; /* Larger font size */
-  position: relative; /* Needed for z-index */
-  z-index: 2; /* Ensure text appears above the circle */
-  display: inline-block; /* Contain the circle background */
-  padding: 15px 30px; /* Add padding around text */
+  font-size: 2.5rem;
+  position: relative;
+  z-index: 2;
+  display: inline-block;
+  padding: 15px 40px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Improves text readability */
 }
 
-/* Red circle background */
+/* Rounded rectangle background */
 h1::before {
   content: '';
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: rgba(255, 0, 0, 0.7); /* Red with 70% opacity */
-  border-radius: 50%; /* Makes it circular */
-  z-index: 1; /* Place behind the text */
-  box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); /* Optional glow effect */
+  border-radius: 15px; /* Adjust this value for more/less rounding */
+  z-index: -1; /* Place behind the text */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
 }
 
-/* Optional: Add animation for subtle pulse effect */
-@keyframes pulse {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.05); }
-  100% { transform: translate(-50%, -50%) scale(1); }
-}
-
-h1::before {
-  animation: pulse 3s infinite ease-in-out;
+/* Optional hover effect */
+h1:hover::before {
+  background-color: rgba(255, 0, 0, 0.8); /* Slightly more opaque on hover */
 }
