@@ -1,3 +1,37 @@
+// 🔐 Simple front-end access control
+const USERNAME = "mohand";
+const PASSWORD = "1234"; // You can change this
+
+(function () {
+  const user = prompt("Enter username:");
+  const pass = prompt("Enter password:");
+
+  if (user !== USERNAME || pass !== PASSWORD) {
+    alert("Access denied.");
+    document.body.innerHTML = `
+  <div style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  ">
+    <div style="
+      background-color: red;
+      color: white;
+      padding: 30px 60px;
+      border-radius: 15px;
+      font-size: 2.5rem;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+      text-align: center;
+    ">
+      Access Denied
+    </div>
+  </div>
+`;
+    throw new Error("Unauthorized access");
+  }
+})();
 // Wait for DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function () {
   // Get search input element
