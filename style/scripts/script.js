@@ -1,6 +1,6 @@
 // 🔐 Simple front-end access control
-const USERNAME = "mohand";
-const PASSWORD = "1234"; // You can change this
+const USERNAME = "MohandL3G";
+const PASSWORD = "9199@mhD"; // You can change this
 
 (function () {
   const user = prompt("Enter username:");
